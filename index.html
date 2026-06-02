@@ -78,10 +78,13 @@ opacity:0;transition:opacity .4s;z-index:9;max-width:90%}
       if(el)el.textContent=m+":"+s;},1000);}
   // social proof toast
   var names=["Maria", "Joao", "Ana", "Pedro", "Carla", "Lucas", "Juliana", "Rafael", "Bia", "Marcos"];
+  // DDDs validos do Brasil (nao usa "DDD" que nao existe)
+  var ddds=[11,12,13,14,15,16,17,18,19,21,22,24,27,28,31,32,33,34,35,37,38,41,42,43,44,45,46,47,48,49,51,53,54,55,61,62,63,64,65,66,67,68,69,71,73,74,75,77,79,81,82,83,84,85,86,87,88,89,91,92,93,94,95,96,97,98,99];
   if(names.length){var tt=document.getElementById("toast");
     function pop(){var n=names[Math.floor(Math.random()*names.length)];
-      var d=Math.floor(Math.random()*90000)+10000;
-      tt.innerHTML="\u2705 "+n+" ("+String(d).slice(0,2)+") acabou de entrar!";
+      var dd=ddds[Math.floor(Math.random()*ddds.length)];
+      var nn=Math.floor(Math.random()*9000)+1000;
+      tt.innerHTML="\u2705 "+n+" ("+dd+") XXXX-"+nn+" acabou de entrar!";
       tt.classList.add("show");setTimeout(function(){tt.classList.remove("show")},3200);}
     setTimeout(pop,3000);setInterval(pop,Math.floor(Math.random()*7000)+6000);}
 })();
